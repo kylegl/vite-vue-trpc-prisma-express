@@ -1,6 +1,7 @@
 import * as trpcExpress from '@trpc/server/adapters/express';
 import * as trpc from '@trpc/server';
 import { Request } from 'express';
+import {prisma } from '../prisma/prisma';
 
 export interface CtxUser {
   id: string
@@ -33,13 +34,13 @@ export function createContext({
   res
 }: trpcExpress.CreateExpressContextOptions) {
 
-  const user = getUserFromReq(req)
+  // const user = getUserFromReq(req)
 
   return {
     req,
     res,
     prisma,
-    user,
+    // user,
   };
 }
 

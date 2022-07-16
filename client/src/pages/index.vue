@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { client } from '~/api/trpcClient'
 const name = $ref('')
 
 const router = useRouter()
@@ -6,6 +7,9 @@ const go = () => {
   if (name)
     router.push(`/hi/${encodeURIComponent(name)}`)
 }
+const data = client.query('hello')
+
+// const res = await client.query('hello')
 </script>
 
 <template>

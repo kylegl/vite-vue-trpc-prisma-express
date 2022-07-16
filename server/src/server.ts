@@ -1,5 +1,5 @@
 /// <reference types="vite/client" />
-
+import * as trpcExpress from '@trpc/server/adapters/express'
 import express, { RequestHandler } from "express";
 import httpDevServer from "vavite/http-dev-server";
 import viteDevServer from "vavite/vite-dev-server";
@@ -26,6 +26,15 @@ app.use((req, _res, next) => {
 
   next();
 });
+
+// TODO add this to template
+app.use(
+  '/trpc',
+  trpcExpress.createExpressMiddleware({
+    router: appRouter,
+    createContext,
+  }),
+);
 
 app.get('/', (_req, res) => res.send('hellooo!'));
 
