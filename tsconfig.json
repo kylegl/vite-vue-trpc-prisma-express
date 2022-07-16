@@ -2,10 +2,22 @@
 	"compilerOptions": {
 		"target": "es2020",
 		"module": "ESNext",
+    "baseUrl": ".",
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
 		"strict": true,
 		"skipLibCheck": true,
-		"moduleResolution": "Node"
-	}
+		"moduleResolution": "Node",
+    "types": [
+      "cookie",
+      "express",
+      "jsonwebtoken",
+      "node",
+      "nodemailer",
+    ],
+    "paths": {
+      "~/*": ["src/*"],
+    },
+	},
+  "exclude": ["dist", "node_modules"]
 }
