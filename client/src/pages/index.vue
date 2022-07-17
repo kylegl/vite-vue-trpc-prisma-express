@@ -1,15 +1,13 @@
 <script setup lang="ts">
-import { client } from '~/api/trpcClient'
 const name = $ref('')
+const testInput = { email: 'ex@mple.com', name: 'user' }
+const { mutate } = useMutation('users.register-user')
 
-const router = useRouter()
 const go = () => {
-  if (name)
-    router.push(`/hi/${encodeURIComponent(name)}`)
+  mutate(testInput)
 }
-const data = client.query('hello')
 
-// const res = await client.query('hello')
+const { data, isLoading, isError, error } = useUserQuery()
 </script>
 
 <template>
@@ -44,7 +42,6 @@ const data = client.query('hello')
     <div>
       <button
         class="m-3 text-sm btn"
-        :disabled="!name"
         @click="go"
       >
         Go

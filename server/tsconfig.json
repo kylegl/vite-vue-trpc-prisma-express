@@ -8,13 +8,7 @@
 		"strict": true,
 		"skipLibCheck": true,
 		"moduleResolution": "Node",
-    "types": [
-      "cookie",
-      "express",
-      "jsonwebtoken",
-      "node",
-      "nodemailer",
-    ],
+    "allowJs": true,
     "paths": {
       "~/*": ["src/*"],
     },

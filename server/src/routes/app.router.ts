@@ -1,9 +1,7 @@
 export const appRouter = createRouter()
-  .query('hello', {
-    resolve: () => {
-      return 'world'
-    },
-  })
+  .merge('users.', userRouter)  
 
 // TODO add to template
 export type AppRouter = typeof appRouter
+
+

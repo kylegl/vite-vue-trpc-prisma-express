@@ -114,3 +114,9 @@ export const userRouter = createRouter()
       return users
     }
   })
+
+  .query('test', {
+    resolve: () => {
+      return 'data from server' 
+    }
+  })

@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "module": "ESNext",
-    "target": "es2016",
+    "target": "ESNext",
     "lib": ["DOM", "ESNext"],
     "strict": true,
     "jsx": "preserve",
@@ -19,9 +19,12 @@
       "vite-plugin-pages/client"
     ],
     "paths": {
-      "~/*": ["src/*"],
-      "@k/server/*": ["../server/src/*"]
+      "~/*": ["src/*"]
     }
+
   },
+  "include": [
+    "../server/src/routes/app.router.ts"
+  ],
   "exclude": ["dist", "node_modules"]
 }

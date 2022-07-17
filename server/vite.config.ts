@@ -1,9 +1,15 @@
+import path from 'path'
 import { defineConfig } from "vite";
 import AutoImport from "unplugin-auto-import/vite"
 
 import vavite from "vavite";
 
 export default defineConfig({
+  resolve: {
+    alias: {
+      '~/': `${path.resolve(__dirname, 'src')}/`,
+    },
+  },
 	plugins: [
     AutoImport({
       include: [
