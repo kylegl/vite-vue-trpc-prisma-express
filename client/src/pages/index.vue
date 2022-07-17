@@ -1,13 +1,15 @@
 <script setup lang="ts">
+import { useMutation, useQuery } from '../composables/createVueQueryHooks'
 const name = $ref('')
-const testInput = { email: 'ex@mple.com', name: 'user' }
+
+const testInput = { email: 'exx@ample.com', name: 'userr' }
 const { mutate } = useMutation('users.register-user')
 
 const go = () => {
   mutate(testInput)
 }
 
-const { data, isLoading, isError, error } = useUserQuery()
+const { data, isLoading, isError, error } = useQuery(['users.test'])
 </script>
 
 <template>
