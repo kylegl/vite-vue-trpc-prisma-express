@@ -1,6 +1,6 @@
 # vite-vue-trpc-prisma-express
 
-TRPC does not have a package for vue. This template is my attempt at starting one with similar functionality.
+TRPC does not have a package for vue. This template is my attempt at starting one with similar functionality to TRPCs React package.
 
 
 This repo utilizes:
