@@ -27,7 +27,6 @@ app.use((req, _res, next) => {
   next();
 });
 
-// TODO add this to template
 app.use(
   '/trpc',
   trpcExpress.createExpressMiddleware({

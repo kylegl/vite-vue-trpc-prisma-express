@@ -2,7 +2,7 @@
 import { useMutation, useQuery } from '../composables/createVueQueryHooks'
 const name = $ref('')
 
-const testInput = { email: 'exx@ample.com', name: 'userr' }
+const testInput = { email: 'ex@ample.com', name: 'user' }
 const { mutate } = useMutation('users.register-user')
 
 const go = () => {
