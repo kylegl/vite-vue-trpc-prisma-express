@@ -1,17 +1,22 @@
 {
-	"compilerOptions": {
-		"target": "es2020",
-		"module": "ESNext",
+  "compilerOptions": {
     "baseUrl": ".",
-		"esModuleInterop": true,
-		"forceConsistentCasingInFileNames": true,
-		"strict": true,
-		"skipLibCheck": true,
-		"moduleResolution": "Node",
+    "module": "ESNext",
+    "target": "es2016",
+    "lib": ["DOM", "ESNext"],
+    "strict": true,
+    "jsx": "preserve",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "noUnusedLocals": true,
+    "strictNullChecks": true,
     "allowJs": true,
+    "forceConsistentCasingInFileNames": true,
     "paths": {
-      "~/*": ["src/*"],
-    },
-	},
+      "~/*": ["src/*"]
+    }
+  },
   "exclude": ["dist", "node_modules"]
 }

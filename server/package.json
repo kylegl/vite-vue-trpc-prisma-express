@@ -1,6 +1,8 @@
 {
 	"name": "express-trpc-prisma",
 	"private": true,
+  "main": "src/index.ts",
+  "typings": "dist/index.d.ts",
 	"scripts": {
 		"start": "node dist",
 		"dev": "vite --open",

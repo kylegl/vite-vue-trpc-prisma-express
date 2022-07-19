@@ -4,12 +4,12 @@ const name = $ref('')
 
 const testInput = { email: 'ex@ample.com', name: 'user' }
 const { mutate } = useMutation('users.register-user')
-
+const res = client.query('users.verify-otp', { hash })
 const go = () => {
   mutate(testInput)
 }
-
-const { data, isLoading, isError, error } = useQuery(['users.test'])
+const hash = 'kdfjifjlili'
+const { data, isLoading, isError, error } = useQuery(['users.verify-otp', { hash }])
 </script>
 
 <template>
