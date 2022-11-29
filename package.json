@@ -1,0 +1,16 @@
+{
+  "name": "@vue-trpc/monorepo",
+  "private": "true",
+  "version": "2.0.0",
+  "description": "vite, vue, trpc, prisma, fastify, template",
+  "packageManager": "pnpm@7.17.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Kyle L<https://github.com/kylegl>",
+  "license": "MIT",
+  "dependencies": {
+    "bumpp": "^8.2.1"
+  }
+}
