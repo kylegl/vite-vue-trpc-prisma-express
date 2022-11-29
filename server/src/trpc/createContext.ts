@@ -34,13 +34,13 @@ export function createContext({
   res
 }: trpcExpress.CreateExpressContextOptions) {
 
-  // const user = getUserFromReq(req)
+  const user = getUserFromReq(req)
 
   return {
     req,
     res,
     prisma,
-    // user,
+    user,
   };
 }
 
