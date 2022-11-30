@@ -5,6 +5,7 @@ import { appRouter } from './router/appRouter';
 
 const server = fastify({
   maxParamLength: 5000,
+  logger: true
 })
 
 server.register(fastifyTRPCPlugin, {
