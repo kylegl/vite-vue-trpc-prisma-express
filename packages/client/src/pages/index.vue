@@ -1,9 +1,17 @@
 <script setup lang="ts">
+import { client } from '~/api/client';
+
 defineOptions({
   name: 'IndexPage',
 })
 const user = useUserStore()
 const name = $ref(user.savedName)
+
+const test = $ref()
+
+async function getUser() {
+  return await client.hello.query()
+}
 
 const router = useRouter()
 const go = () => {
@@ -29,7 +37,7 @@ const { t } = useI18n()
     </p>
 
     <div py-4 />
-
+    {{test}}
     <TheInput
       v-model="name"
       placeholder="What's your name?"
@@ -42,7 +50,7 @@ const { t } = useI18n()
       <button
         btn m-3 text-sm
         :disabled="!name"
-        @click="go"
+        @click="getUser"
       >
         {{ t('button.go') }}
       </button>

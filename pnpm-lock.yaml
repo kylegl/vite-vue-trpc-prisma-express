@@ -13,11 +13,13 @@ importers:
       '@antfu/eslint-config': ^0.33.0
       '@iconify-json/carbon': ^1.1.11
       '@intlify/vite-plugin-vue-i18n': ^6.0.3
+      '@trpc/client': ^10.4.2
       '@types/markdown-it-link-attributes': ^3.0.1
       '@types/nprogress': ^0.2.0
       '@unocss/reset': ^0.47.2
       '@vitejs/plugin-vue': ^3.2.0
       '@vue-macros/volar': ^0.5.4
+      '@vue-trpc/server': workspace:*
       '@vue/test-utils': ^2.2.4
       '@vueuse/core': ^9.6.0
       '@vueuse/head': ^1.0.18
@@ -55,6 +57,7 @@ importers:
       vue-router: ^4.1.6
       vue-tsc: ^1.0.10
     dependencies:
+      '@trpc/client': 10.4.2
       '@unocss/reset': 0.47.3
       '@vueuse/core': 9.6.0_vue@3.2.45
       '@vueuse/head': 1.0.18_vue@3.2.45
@@ -72,6 +75,7 @@ importers:
       '@types/nprogress': 0.2.0
       '@vitejs/plugin-vue': 3.2.0_vite@3.2.4+vue@3.2.45
       '@vue-macros/volar': 0.5.4_vue-tsc@1.0.10+vue@3.2.45
+      '@vue-trpc/server': link:../server
       '@vue/test-utils': 2.2.4_vue@3.2.45
       critters: 0.0.16
       cross-env: 7.0.3
@@ -104,6 +108,7 @@ importers:
   packages/server:
     specifiers:
       '@antfu/eslint-config': ^0.33.0
+      '@fastify/cors': ^8.2.0
       '@prisma/client': ^4.6.1
       '@trpc/server': ^10.4.1
       '@types/node': ^18.11.9
@@ -116,6 +121,7 @@ importers:
       typescript: ^4.9.3
       zod: ^3.19.1
     dependencies:
+      '@fastify/cors': 8.2.0
       '@prisma/client': 4.7.0_prisma@4.7.0
       '@trpc/server': 10.4.2
       fastify: 4.10.2
@@ -1512,6 +1518,13 @@ packages:
       fast-uri: 2.1.0
     dev: false
 
+  /@fastify/cors/8.2.0:
+    resolution: {integrity: sha512-qDgwpmg6C4D0D3nh8MTMuRXWyEwPnDZDBODaJv90FP2o9ukbahJByW4FtrM5Bpod5KbTf1oIExBmpItbUTQmHg==}
+    dependencies:
+      fastify-plugin: 4.3.0
+      mnemonist: 0.39.5
+    dev: false
+
   /@fastify/deepmerge/1.2.0:
     resolution: {integrity: sha512-pfBLfEykO5uqw5cIzGD24sPfbsLfjESIQSe8oqbcMpodUwO2swPQGvuhdD137+n/1WiSH24vq3z3th2ErFbxVg==}
     dev: false
@@ -1992,6 +2005,12 @@ packages:
     resolution: {integrity: sha512-XCuKFP5PS55gnMVu3dty8KPatLqUoy/ZYzDzAGCQ8JNFCkLXzmI7vNHCR+XpbZaMWQK/vQubr7PkYq8g470J/A==}
     engines: {node: '>= 10'}
     dev: true
+
+  /@trpc/client/10.4.2:
+    resolution: {integrity: sha512-E21TTmFN8bWYWrZk4nDaNsOUektL8I1ASvToSzOIys9X7iF/IRZ6H8CNdTZtQ3k6K7kvcDAu/8SlPuqZRgFvsg==}
+    peerDependencies:
+      '@trpc/server': 10.4.2
+    dev: false
 
   /@trpc/server/10.4.2:
     resolution: {integrity: sha512-/DO7fwIHjKmZ4QawYVbmJnPzTdtTRQR1qrVgQNYf8YlqygQe6xPlPjBQK47iIi1G5fveXhgKFG8SQjNDP3vaDQ==}
@@ -4929,6 +4948,10 @@ packages:
     resolution: {integrity: sha512-qKRta6N7BWEFVlyonVY/V+BMLgFqktCUV0QjT259ekAIlbVrMaFnFLxJ4s/JPl4tou56S1BzPufI60bLe29fHA==}
     dev: false
 
+  /fastify-plugin/4.3.0:
+    resolution: {integrity: sha512-M3+i368lV0OYTJ5TfClIoPKEKSOF7112iiPdwgfSR0gN98BjA1Nk+c6oBHtfcVt9KiMxl+EQKHC1QNWo3ZOpYQ==}
+    dev: false
+
   /fastify/4.10.2:
     resolution: {integrity: sha512-0T+4zI6N3S8ex0LCZi3H4FasJR4AzWw834fUkPWvV8r6GBJkLmAOfFxH8f5V29Plef24IK0QSQD/tz1Nx+1UOA==}
     dependencies:
@@ -6473,6 +6496,12 @@ packages:
       ufo: 1.0.1
     dev: true
 
+  /mnemonist/0.39.5:
+    resolution: {integrity: sha512-FPUtkhtJ0efmEFGpU14x7jGbTB+s18LrzRL2KgoWz9YvcY3cPomz8tih01GbHwnGk/OmkOKfqd/RAQoc8Lm7DQ==}
+    dependencies:
+      obliterator: 2.0.4
+    dev: false
+
   /mrmime/1.0.1:
     resolution: {integrity: sha512-hzzEagAgDyoU1Q6yg5uI+AorQgdvMCur3FcKf7NhMKWsaYg+RnbTyHRa/9IlLF9rf455MOCtcqqrQQ83pPP7Uw==}
     engines: {node: '>=10'}
@@ -6737,6 +6766,10 @@ packages:
       define-properties: 1.1.4
       es-abstract: 1.20.4
     dev: true
+
+  /obliterator/2.0.4:
+    resolution: {integrity: sha512-lgHwxlxV1qIg1Eap7LgIeoBWIMFibOjbrYPIPJZcI1mmGAI2m3lNYpK12Y+GBdPQ0U1hRwSord7GIaawz962qQ==}
+    dev: false
 
   /obuf/1.1.2:
     resolution: {integrity: sha512-PX1wu0AmAdPqOL1mWhqmlOd8kOIZQwGZw6rh7uby9fTc5lhaOWFLX3I6R1hrF9k3zUY40e6igsLGkDXK92LJNg==}

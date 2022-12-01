@@ -57,6 +57,7 @@ export default defineConfig({
       dirs: [
         'src/composables',
         'src/store',
+        'src/api',
       ],
       vueTemplate: true,
     }),
